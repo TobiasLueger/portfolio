@@ -1,0 +1,132 @@
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Avenir";
+}
+
+body {
+	overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+	margin: 0.2em 0;
+	background: #ccc;
+	color: #000;
+	padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Util classes
+   ========================================================================== */
+
+.util-overflow-hidden {
+	overflow: hidden;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+header {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+
+	& .header-main {
+		width: 100vw;
+		height: 100vh;
+		background-color: #b3d4f0;
+		position: relative;
+
+		& .header-title {
+			color: #27577f;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			z-index: 1;
+			font-size: large;
+
+			& span {
+				font-weight: bold;
+				font-size: 100px;
+				margin-top: -30px;
+			}
+		}
+
+		& #scene {
+			height: 100%;
+		}
+
+		& .cloud {
+			position: absolute;
+
+
+			@media (max-width: 768px) {
+				&3, &4, &8{
+					display: none;
+				}
+			}
+
+			&1 {
+				left: 30%!important;
+				top: 30%!important;
+				width: 30px;
+			}
+
+			&2 {
+				left: 80%!important;
+				top: 70%!important;
+				width: 200px;
+			}
+
+			&3 {
+				left: 60%!important;
+				top: 70%!important;
+				width: 70px;
+			}
+
+			&4 {
+				left: 75%!important;
+				top: 20%!important;
+				width: 150px;
+			}
+
+			&5 {
+				left: 10%!important;
+				top: 50%!important;
+				width: 230px;
+			}
+
+			&6 {
+				left: 8%!important;
+				top: 5%!important;
+				width: 150px;
+			}
+
+			&7 {
+				left: 50%!important;
+				top: 10%!important;
+				width: 100px;
+			}
+
+			&8 {
+				left: 10%!important;
+				top: 45%!important;
+				width: 30px;
+			}
+		}
+	}
+}
