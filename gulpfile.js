@@ -1,4 +1,5 @@
 const babel = require('gulp-babel');
+const glob = require('glob');
 const del = require('del');
 const gulp = require('gulp');
 const watch = require('gulp-watch');
@@ -6,9 +7,9 @@ const uglify = require('gulp-uglify');
 const uglifycss = require('gulp-uglifycss');
 const browserSync = require('browser-sync');
 const sass = require('gulp-sass');
-//const handlebars = require('gulp-compile-handlebars');
-//const rename = require('gulp-rename');
-const server = browserSync.create();
+const handlebars = require('gulp-compile-handlebars');
+const rename = require('gulp-rename');
+const server = require('browser-sync').create();
 
 const paths = {
 	scripts: {
@@ -79,6 +80,33 @@ function copyJsLibs() {
 		.pipe(gulp.dest(paths.expo.docs_js_libs));
 }
 
+const getDirectoriesFromGlob = (path, existingArray) => {
+	const fileArray = existingArray || [];
+
+	glob.sync(path)
+		.forEach(filePath =>
+			fileArray.push(filePath.substring(0, filePath.lastIndexOf('/'))));
+
+	return fileArray;
+};
+
+function compileHbs() {
+	return gulp.src('templates/**/*.hbs')
+	.pipe(handlebars('', {
+		ignorePartials: true,
+		batch: getDirectoriesFromGlob(
+			'templates/partials/**/*.hbs',
+		)
+	}))
+	.pipe(rename((path) => {
+		// eslint-disable-next-line no-param-reassign
+		path.extname = '.html';
+	}))
+	.pipe(gulp.dest(paths.expo.docs));
+}
+
+
+
 // HBS einbindung muss noch erfolgen
 //gulp.src('templates/*.hbs')
 //.pipe(hbsAll('html', {
@@ -130,13 +158,10 @@ function serve(done) {
 }
 
 const watcher = () => {
-	gulp.watch('js/*', gulp.series(copyJs, reload));
-	gulp.watch('js/main.js', gulp.series(copyJs, reload));
-	gulp.watch('js/partials/*.js', gulp.series(copyJs, reload));
-	gulp.watch('scss/*', gulp.series(copyCss, reload));
-	gulp.watch('scss/main.scss', gulp.series(copyCss, reload));
-	gulp.watch('scss/partials/*.scss', gulp.series(copyCss, reload));
-	gulp.watch('templates/*.html', gulp.series(copyHtmlDocs, reload));
+	gulp.watch('js/**/*.js', gulp.series(copyJs, reload));
+	gulp.watch('scss/**/*.scss', gulp.series(copyCss, reload));
+	gulp.watch('templates/**/*.html', gulp.series(copyHtmlDocs,reload));
+	//gulp.watch('templates/**/*.hbs', gulp.series(compileHbs,reload));
 };
 
 /**
@@ -146,13 +171,11 @@ const watcher = () => {
  *
  * **/
 
-gulp.task('default', gulp.series(cleanDocs, copyHtmlDocs, buildDirectory, copyJs, copyJsLibs, copyCss, copyImgDocs, serve, watcher),);
+gulp.task('default', gulp.series(cleanDocs, buildDirectory, copyHtmlDocs, copyJs, copyJsLibs, copyCss, copyImgDocs, serve, watcher));
 
+gulp.task('build', gulp.series(cleanDocs, copyHtmlDocs, buildDirectory, copyJs, copyCss, copyImgDocs));
 
-gulp.task('build', gulp.series(cleanDocs, copyHtmlDocs, buildDirectory, copyJs, copyCss, copyImgDocs),);
-
-
-gulp.task('deleteAll', gulp.series(cleanDocs),);
+gulp.task('deleteAll', gulp.series(cleanDocs));
 
 
 
