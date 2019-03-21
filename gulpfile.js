@@ -10,6 +10,7 @@ const sass = require('gulp-sass');
 const handlebars = require('gulp-compile-handlebars');
 const rename = require('gulp-rename');
 const server = require('browser-sync').create();
+const server2 = require('browser-sync');
 
 const paths = {
 	scripts: {
@@ -91,7 +92,7 @@ const getDirectoriesFromGlob = (path, existingArray) => {
 };
 
 function compileHbs() {
-	return gulp.src('templates/**/*.hbs')
+	return gulp.src('templates/**/*.hbs', { sourcemaps: true })
 	.pipe(handlebars('', {
 		ignorePartials: true,
 		batch: getDirectoriesFromGlob(
@@ -104,20 +105,6 @@ function compileHbs() {
 	}))
 	.pipe(gulp.dest(paths.expo.docs));
 }
-
-
-
-// HBS einbindung muss noch erfolgen
-//gulp.src('templates/*.hbs')
-//.pipe(hbsAll('html', {
-//context: {foo: 'bar'},
-
-// partials: ['templates/partials/**/*.hbs'],}))
-//.pipe(rename('index.html'))
-//.pipe(htmlmin({collapseWhitespace: true}))
-//.pipe(gulp.dest(''));
-
-
 
 function copyJs() {
 	return gulp.src(paths.scripts.js_main, "./js/libs/*", { sourcemaps: true })
@@ -151,8 +138,15 @@ function reload(done) {
 function serve(done) {
     server.init({
         server: {
-            baseDir: './docs/'
-        }
+			baseDir: './docs/'
+		},
+		middleware: [
+			// webpackDevMiddleware(bundler, { /* options */ }),
+			// webpackHotMiddleware(bundler)
+		],
+		startPath: 'index.html',
+		reloadDelay: 2000,
+		reloadOnRestart: true,
     });
     done();
 }
@@ -160,8 +154,8 @@ function serve(done) {
 const watcher = () => {
 	gulp.watch('js/**/*.js', gulp.series(copyJs, reload));
 	gulp.watch('scss/**/*.scss', gulp.series(copyCss, reload));
-	gulp.watch('templates/**/*.html', gulp.series(copyHtmlDocs,reload));
-	//gulp.watch('templates/**/*.hbs', gulp.series(compileHbs,reload));
+	//gulp.watch('templates/**/*.html', gulp.series(copyHtmlDocs,reload));
+	gulp.watch('templates/**/*.hbs', gulp.series(compileHbs, reload));
 };
 
 /**
@@ -171,9 +165,11 @@ const watcher = () => {
  *
  * **/
 
-gulp.task('default', gulp.series(cleanDocs, buildDirectory, copyHtmlDocs, copyJs, copyJsLibs, copyCss, copyImgDocs, serve, watcher));
+gulp.task('default', gulp.series(cleanDocs, buildDirectory, compileHbs, copyJs, copyJsLibs, copyCss, copyImgDocs, serve, watcher));
 
 gulp.task('build', gulp.series(cleanDocs, copyHtmlDocs, buildDirectory, copyJs, copyCss, copyImgDocs));
+
+gulp.task('reload', gulp.series(reload, serve, watcher));
 
 gulp.task('deleteAll', gulp.series(cleanDocs));
 
