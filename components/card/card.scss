@@ -7,143 +7,106 @@
 *
 **/
 
-$component: 'card';
+$component: "card";
 
 // block
 %#{$component} {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative !important;
+
+  @media screen and (max-width: 991px) {
+    &:last-child {
+      margin-bottom: 40px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    height: 100%;
+    width: 50%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative!important;
 
-    &:first-child {
-        // animation: card1Y 10s infinite;
-        a {
-            animation-name: card1X;
-            animation-timing-function: cubic-bezier(0.42,0,1,1);
-            animation-iteration-count: infinite;
-            animation-duration: 5s;
-        }
+    img {
+      width: 100%;
+      transition: 0.3s;
     }
 
-    &:nth-child(2){
-        a {
-            animation: card2X 20s infinite;
-        }
-    }
+    p {
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-top: 20px;
 
-    &:last-child{
-        a {
-            animation: card3X 20s infinite;
-        }
-    }
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
 
-    @media screen and (max-width: 991px) {
-        &:last-child {
-            margin-bottom: 40px;
-        }
-    }
+      padding-left: 10px;
+      padding-bottom: 5px;
+      padding-right: 10px;
 
-    a {
-        text-decoration: none;
+      transition: 0.3s ease-out;
+
+      &::before {
+        content: "";
+        width: 0;
         height: 100%;
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        background-image: linear-gradient(
+          to top,
+          rgb(34, 34, 34) 10%,
+          rgba(0, 0, 0, 0) 20%
+        );
+        border-radius: 10px;
+        opacity: 0;
 
-        img {
-            width: 100%;
-            transition: 0.3s;
-        }
+        position: absolute;
+        left: 0;
+        bottom: 5px;
+        z-index: -1;
 
-        p {
-            text-transform: uppercase;
-            font-weight: bold;
-            margin-top: 20px;
+        transform: rotate(-2deg);
+        transform-origin: left bottom;
+        transition: 0.3s ease-out;
+      }
 
-            position: relative;
-            z-index: 1;
-            display: inline-flex;
-            
-            padding-left: 10px;
-            padding-bottom: 5px;
-            padding-right: 10px;
+      b {
+        font-size: 16px;
+        padding-right: 5px;
+        font-style: bold;
+      }
 
-            transition: 0.3s ease-out;
-
-            &::before{
-                content: "";
-                width: 0;
-                height: 100%;
-                background-image: linear-gradient(to top, rgb(34, 34, 34) 10%, rgba(0, 0, 0, 0) 20%);
-                border-radius: 10px;
-                opacity: 0;
-                
-                position: absolute;
-                left: 0;
-                bottom: 5px;
-                z-index: -1;
-                
-                
-                transform: rotate(-2deg);
-                transform-origin: left bottom;
-                transition: 0.3s ease-out;
-            }
-
-            b {
-                font-size: 16px;
-                padding-right: 5px;
-                font-style: bold;
-            }
-
-            i {
-                padding-right: 5px;
-            }
-        }
-
-        &:hover {
-            img {
-                // filter: drop-shadow(2px 4px 6px pink);
-                filter: contrast(0.3);
-                transform: rotate(5deg);
-            }
-
-            p {
-                opacity: 0.3;
-
-                &::before{
-                    width: 100%;
-                    transition-duration: 0.3s;
-                    opacity: 1;
-                }
-            }
-        }
+      i {
+        padding-right: 5px;
+      }
     }
 
-    
-}
+    &:hover {
+      img {
+        // filter: drop-shadow(2px 4px 6px pink);
+        filter: contrast(0.3);
+        transform: rotate(5deg);
+      }
 
+      p {
+        opacity: 0.3;
 
-@keyframes card1X {
-    25% { transform: translate( 10px, 5px) }
-    50% { transform: translate( 0px, 10px) }
-    75% { transform: translate( 10px, 5px) }
-}
-
-
-
-@keyframes card1Y {
-	12% { transform: translateY( 0px) }
-	50% { transform: translateY( 0px) }
-    75% { transform: translateY( 0px) }
+        &::before {
+          width: 100%;
+          transition-duration: 0.3s;
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 
 // modifier
 
-
 // component class selector
 .#{$component} {
-	@extend %#{$component};
+  @extend %#{$component};
 }
