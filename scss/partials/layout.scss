@@ -2,10 +2,18 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
+
+// black headers/bg = #1c1b20
+// orange headers/bg = #ff5851
+// grey = #f8f7f3
+// p = #606060
+
+
 * {
 	margin: 0;
 	padding: 0;
-	font-family: "Avenir";
+	font-family: 'Montserrat', sans-serif;
+	color: #333;
 }
 
 /* ==========================================================================
@@ -15,7 +23,7 @@
 .browserupgrade {
 	margin: 0.2em 0;
 	background: #ccc;
-	color: #000;
+	color: #333;
 	padding: 0.2em 0;
 }
 
@@ -23,8 +31,80 @@
    Util classes
    ========================================================================== */
 
-.util-overflow-hidden {
-	overflow: hidden;
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {
+	position: inherit!important;
+	padding: 15px;
+}
+
+/* ==========================================================================
+   Util classes
+   ========================================================================== */
+
+.util-add {
+	&-margin {
+		margin: 20px;
+
+		&-top {
+			margin-top: 20px;
+		}
+		&-bottom {
+			margin-bottom: 20px;
+		}
+		&-left {
+			margin-left: 20px;
+		}
+		&-right {
+			margin-right: 20px;
+		}
+		&-x {
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+		&-y {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+	}
+
+	&-padding {
+		padding:20px;
+	}
+}
+
+.util-remove {
+	&-margin {
+		margin:0;
+	}
+
+	&-padding {
+		padding:0;
+	}
+}
+
+.util-text-center {
+	text-align: center;
+}
+
+.util-bg {
+	background-color: #fff;
+
+	&-orange {
+		background-color: #ff5851;
+	}
+
+	&-grey {
+		background-color: #f8f7f3;
+	}
+}
+
+.util-center {
+	text-align: center;
+
+	&-all {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 }
 
 
@@ -32,50 +112,100 @@
    Author's custom styles
    ========================================================================== */
 
-header {
-	height: 80px;
-	padding: 0 30px;
-	margin: 0 auto;
+html {
+	scroll-behavior: smooth;
+}
 
-	.logo {
-		display: inline-block;
-		position: static;
-		top: initial;
-		left: initial;
-		padding-top: 30px;
-		margin-right: 30px;
+body {
+	padding: 40px;
+	position: relative;
 
-		img{
-			width: 20px;
-			height: 20px;
+	@media screen and (max-width: 991px) {
+		padding: 20px;
+	}
+}
+
+i {
+	font-family: "Libre Baskerville", serif;
+	font-weight: bold;
+	font-style: italic;
+	display: inline-block;
+}
+
+#page-wrapper {
+	opacity: 0;
+
+	& .section {
+		display: flex;
+		padding-top: 40px;
+		width:100%;
+		height: auto;
+		min-height: calc(100vh - 80px);
+		transition: 0.3s ease-out;
+
+		&__close {
+			position: absolute;
+			top: 20px;
+			right: 30px;
+			font-size: 30px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+
+		&.no-scroll {
+			height: calc(100vh - 80px);
+			overflow: hidden;
+		}
+
+		@media screen and (min-width: 992px) {
+			height: calc(100vh - 80px);
+			padding-top: 0;
+			top: 40px;
+			left: 40px;
+			justify-content: center;
+			align-items: center;
+			position: fixed;
+			width: calc(100% - 80px);
+		}
+	
+		&-half {
+			width:50%;
+			float: left;
+		}
+
+		&-content {
+			img {
+				width:50%
+			}
+		}
+
+		&-center {
+			& .container {
+				@media screen and (min-width: 992px) {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%,-50%);
+				}
+				
+			}
+		}
+
+		&-me, &-projects, &-contact {
+			display: none;
+			opacity: 0;
+			z-index: 1;
+			top: 40px;
+			z-index: 1;
+			width: calc(100% - 80px);
+			
+			&.is-active {
+				display: flex;
+				opacity: 1;
+				position: absolute;
+		
+			}
 		}
 	}
-
-	.nav {
-		position: absolute;
-		top: 31px;
-		left: 67px;
-	}
 }
 
-main {
-	display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 30px;
-    margin-bottom: 30px;
-    max-width: 1500px; 
-    padding: 0 30px;
-	margin: 0 auto;
-	
-	.first-work {
-		position: relative;
-		background: url(""); 
-		border-radius: 10px;
-		height: 600px;
-		grid-column: span 6;
-	} 
-}
-
-footer {
-	content: "";
-}

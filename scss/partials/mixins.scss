@@ -1,0 +1,46 @@
+$body-font-size-px: 16 !default;
+
+@function pxToEm($targetPx, $basePx: $body-font-size-px) {
+	// base em is $basePx wide
+	@return ($targetPx / $basePx) + 0em;
+}
+
+// Grid breakpoints
+$featurephone: 320 !default;
+$smartphone: 480 !default;
+$tablet: 768 !default;
+$desktop: 992 !default;
+$retina: 1200 !default;
+$extended: 1440 !default;
+
+// map for respondMin/respondMax mixin
+$breakpoints: (
+		'min-xs': pxToEm($featurephone),
+		'min-sm': pxToEm($smartphone),
+		'min-md': pxToEm($tablet),
+		'min-lg': pxToEm($desktop),
+		'min-xl': pxToEm($retina),
+		'min-xxl': pxToEm($extended),
+		'max-xs': pxToEm($smartphone - 1),
+		'max-sm': pxToEm($tablet - 1),
+		'max-md': pxToEm($desktop - 1),
+		'max-lg': pxToEm($retina - 1),
+		'max-xl': pxToEm($extended - 1)
+) !default;
+
+/**
+ * Mixin for defining values at an specific mediaQuerie
+ *
+ * @param {string} $width - breakpoint from $breakpoints map
+ */
+ @mixin respondMin($width) {
+	@media screen and (min-width: $width) {
+		@content;
+	}
+}
+
+@mixin respondMax($width) {
+	@media screen and (max-width: $width) {
+		@content;
+	}
+}

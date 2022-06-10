@@ -1,26 +1,37 @@
-const babel = require('gulp-babel');
+'use strict';
+
 const glob = require('glob');
 const del = require('del');
 const gulp = require('gulp');
-const watch = require('gulp-watch');
-const uglify = require('gulp-uglify');
+const babel = require('gulp-babel');
+const plumber = require('gulp-plumber');
+const sourcemaps = require('gulp-sourcemaps');
 const uglifycss = require('gulp-uglifycss');
-const browserSync = require('browser-sync');
+const uglify = require('gulp-uglify');
 const sass = require('gulp-sass');
 const handlebars = require('gulp-compile-handlebars');
 const rename = require('gulp-rename');
 const server = require('browser-sync').create();
+const helpers = require('./templates/helpers/hbs-helpers');
+const browserify = require('browserify');
+const babelify = require('babelify');
+const buffer = require('vinyl-buffer');
+const source = require('vinyl-source-stream');
+
 
 const paths = {
 	scripts: {
-		js_main: './js/main.js',
+		js_main: ['main.js'],
+		js_folder: './js/',
 		js_partials: './js/partials/*',
-		js_libs: './js/libs/*'
+		js_libs: './js/libs/*',
+		js_components: './components/**/*'
 	},
 
 	styles: {
 		scss_main: './scss/main.scss',
 		scss_partials: './scss/partials/*',
+		scss_components: './components/**/*'
 	},
 
 	img: {
@@ -28,7 +39,8 @@ const paths = {
 	},
 
 	templates: {
-		html: './templates/*'
+		html: './templates/*',
+		php: './templates/php/*.php'
 	},
 
 	expo: {
@@ -50,7 +62,13 @@ const paths = {
 
 
 
-const cleanDocs = () => del(['docs']);
+ 
+function cleanDocs(cb) {
+	del(['docs']);
+	cb();
+}
+
+// exports.clean = del.bind(null, ['docs', 'coverage', 'build', 'release']);
 
 
 
@@ -70,8 +88,8 @@ function buildDirectory() {
 		.pipe(gulp.dest('./docs/img'));
 }
 
-function copyHtmlDocs() {
-	return gulp.src(paths.templates.html, { sourcemaps: true })
+function copyPHP() {
+	return gulp.src(paths.templates.php, { sourcemaps: true })
 		.pipe(gulp.dest(paths.expo.docs));
 }
 
@@ -91,13 +109,22 @@ const getDirectoriesFromGlob = (path, existingArray) => {
 };
 
 function compileHbs() {
-	return gulp.src('templates/**/*.hbs')
-	.pipe(handlebars('', {
+	const localPartials = [
+		'templates/partials/layouts',
+		'templates/partials/includes',
+	];
+
+	const options = {
 		ignorePartials: true,
 		batch: getDirectoriesFromGlob(
-			'templates/partials/**/*.hbs',
-		)
-	}))
+			'components/**/*.hbs',
+			localPartials,
+		),
+		helpers,
+	};
+
+	return gulp.src('templates/views/**/*.hbs')
+	.pipe(handlebars('', options))
 	.pipe(rename((path) => {
 		// eslint-disable-next-line no-param-reassign
 		path.extname = '.html';
@@ -105,27 +132,24 @@ function compileHbs() {
 	.pipe(gulp.dest(paths.expo.docs));
 }
 
-
-
-// HBS einbindung muss noch erfolgen
-//gulp.src('templates/*.hbs')
-//.pipe(hbsAll('html', {
-//context: {foo: 'bar'},
-
-// partials: ['templates/partials/**/*.hbs'],}))
-//.pipe(rename('index.html'))
-//.pipe(htmlmin({collapseWhitespace: true}))
-//.pipe(gulp.dest(''));
-
-
-
-function copyJs() {
-	return gulp.src(paths.scripts.js_main, "./js/libs/*", { sourcemaps: true })
-		.pipe(babel({
-			presets: ['@babel/env']
-		}))
-		.pipe(uglify())
+function copyJs( jsCopyDone ) {
+	paths.scripts.js_main.map( function(entry){
+		return browserify({
+			entries: [paths.scripts.js_folder + entry]
+		})
+		.transform ( babelify, { presets: ['@babel/preset-env'] } )
+		.bundle()
+		.pipe( source( entry ))
+		.pipe(rename({ extname: '.min.js'}))
+		.pipe( buffer())
+		.pipe( sourcemaps.init({ loadmaps: true }))
+		.pipe( uglify())
+		.pipe( sourcemaps.write( './'))
 		.pipe(gulp.dest(paths.expo.docs_js));
+	});
+
+	jsCopyDone();
+		
 }
 
 function copyCss() {
@@ -158,10 +182,26 @@ function serve(done) {
 }
 
 const watcher = () => {
+	//Templates Watcher
+	gulp.watch('templates/views/**/*.hbs', gulp.series(compileHbs,reload));
+	gulp.watch('templates/partials/includes/*.hbs', gulp.series(compileHbs,reload));
+	gulp.watch('templates/partials/layouts/*.hbs', gulp.series(compileHbs,reload));
+	gulp.watch('templates/php/*.php', gulp.series(copyPHP,reload));
+	gulp.watch('components/**/*.hbs', gulp.series(compileHbs,reload));
+
+	//Scripts Watcher
 	gulp.watch('js/**/*.js', gulp.series(copyJs, reload));
+	gulp.watch('components/**/*.js', gulp.series(copyJs,reload));
+
+	//Styles Watcher
 	gulp.watch('scss/**/*.scss', gulp.series(copyCss, reload));
-	gulp.watch('templates/**/*.html', gulp.series(copyHtmlDocs,reload));
-	//gulp.watch('templates/**/*.hbs', gulp.series(compileHbs,reload));
+	gulp.watch('components/**/*.scss', gulp.series(copyCss,reload));
+
+	//Image Watcher
+	gulp.watch('img/**', gulp.series(copyImgDocs, reload));
+
+	
+
 };
 
 /**
@@ -171,9 +211,9 @@ const watcher = () => {
  *
  * **/
 
-gulp.task('default', gulp.series(cleanDocs, buildDirectory, copyHtmlDocs, copyJs, copyJsLibs, copyCss, copyImgDocs, serve, watcher));
+gulp.task('default', gulp.series(cleanDocs, compileHbs, copyPHP, buildDirectory, copyJs, copyJsLibs, copyCss, copyImgDocs, serve, watcher));
 
-gulp.task('build', gulp.series(cleanDocs, copyHtmlDocs, buildDirectory, copyJs, copyCss, copyImgDocs));
+gulp.task('build', gulp.series(cleanDocs, compileHbs, copyPHP, buildDirectory, copyJs, copyCss, copyImgDocs));
 
 gulp.task('deleteAll', gulp.series(cleanDocs));
 
