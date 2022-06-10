@@ -1,1 +1,24 @@
+@charset "utf-8";
+
+/**
+* Bootstrap
+**/
+
+@import '../node_modules/bootstrap-4-grid/scss/grid';
+
+/**
+* Own Files
+**/
+
+@import "partials/mixins";
 @import "partials/layout";
+
+/**
+* Components
+**/
+@import "../components/page-overlapp/page-overlapp";
+@import "../components/site-border/site-border";
+@import "../components/header/header";
+@import "../components/button/button";
+@import "../components/card/card";
+@import "../components/social-bar/social-bar";

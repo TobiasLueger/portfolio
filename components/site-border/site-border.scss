@@ -1,0 +1,24 @@
+.site-border {
+    position: fixed;
+    z-index: 10;
+   
+    
+
+    & div:nth-child(1) {
+        width: 100%;
+        height: 40px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+    }
+
+    & div:nth-child(2) {
+        width: 100%;
+        height: 40px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: #fff;
+    }
+}

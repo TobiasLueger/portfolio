@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+/**
+*
+* header.scss
+* 25.05.2020 Tobias Lüger
+*
+**/
+
+$component: 'header';
+
+// block
+%#{$component} {
+	opacity: 0;
+	position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+	z-index: 100;
+}
+
+// element
+
+
+.#{$component}{
+
+	.#{$component}__logo {
+
+		padding-bottom: 30px;
+
+		@media screen and (max-width: 991px) {
+			padding-bottom: 0;
+		}
+
+		svg {
+			max-width: 150px;
+			width: 100%;
+			transition:transform .3s cubic-bezier(.3,.86,.61,1.63);
+		}
+
+		&:not(.clicked):hover {
+			svg {
+			  transform:scale(.9);
+			  transition:transform .3s cubic-bezier(.3,.86,.61,1.63);
+			}
+		}
+	
+	}
+
+}
+
+
+// modifier
+
+
+// component class selector
+.#{$component} {
+	@extend %#{$component};
+}
+
+
