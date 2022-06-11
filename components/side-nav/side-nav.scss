@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+/**
+*
+* side-nav.scss
+* 25.05.2020 Tobias Lüger
+*
+**/
+
+$component: "side-nav";
+
+// block
+%#{$component} {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 101;
+  width: 100px;
+  right: -100px;
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  transition: all 0.3s ease-in-out;
+
+  @media screen and (max-width: 991px) {
+    display: none;
+  }
+
+  &.is-active {
+    right: 0;
+  }
+
+  .card {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    &.is-active {
+      img {
+        // filter: drop-shadow(2px 4px 6px pink);
+        filter: contrast(0.3);
+        transform: rotate(5deg);
+      }
+
+      p {
+        opacity: 0.3;
+
+        &::before {
+          width: 100%;
+          transition-duration: 0.3s;
+          opacity: 1;
+        }
+      }
+    }
+    a {
+      display: flex;
+      text-decoration: none;
+      margin: 0 auto;
+      width: 80%;
+
+      img {
+        width: 40px;
+      }
+
+      p {
+        font-size: 12px;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+// component class selector
+.#{$component} {
+  @extend %#{$component};
+}
