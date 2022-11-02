@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  body,
+  html {
+    font-family: "Helvetica", "Arial", sans-serif;
+    color: #444444;
+    font-size: 16px;
+  }
+}
