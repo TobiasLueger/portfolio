@@ -7,7 +7,7 @@ const Header = ({}) => {
   const [mobileClicked, setMobileClicked] = useState(false);
 
   return (
-    <div className="absolute w-full flex flex-row justify-between items-end h-[60px] px-[30px]">
+    <div className="absolute w-full flex flex-row justify-between items-end h-[60px] md:h-[80px] px-[30px]">
       <div className="flex flex-row w-full justify-between items-center">
         <Link href="/">
           <p className="font-bold text-2xl text-black flex relative">
