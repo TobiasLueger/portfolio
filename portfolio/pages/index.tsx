@@ -17,7 +17,7 @@ const Home: NextPage = () => {
 
       <Header></Header>
 
-      <main className="flex w-full flex-1 flex-col items-center justify-center lg:max-w-[90%] lg:mx-auto px-[30px]">
+      <main className="flex flex-1 flex-col items-center justify-center w-full lg:max-w-[90%] lg:mx-auto px-[30px]">
         <div className="h-screen flex flex-col justify-end pb-[80px]">
           <p className="text-4xl md:text-5xl lg:text-7xl xl:text-9xl font-bold text-black tracking-[-0.04em] mb-6">
             Hi, I am Tobias. <br className="hidden md:block" /> I am a frondend
@@ -102,7 +102,9 @@ const Home: NextPage = () => {
           <Projects></Projects>
         </div>
         <SocialBar></SocialBar> */}
-        <div className="mt-40 border-t "></div>
+        <div className="mt-40 border-t w-full lg:max-w-[90%] lg:mx-auto px-[30px]">
+          Footer
+        </div>
       </main>
     </div>
   );
