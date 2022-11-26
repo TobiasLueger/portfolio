@@ -14,6 +14,7 @@ module.exports = {
       fontOrange: "#e76f51",
       grey: "#555",
     },
+    extend: {},
   },
   plugins: [],
 };
