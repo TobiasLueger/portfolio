@@ -1,3 +1,5 @@
+@import "../fonts/font.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,8 +7,33 @@
 @layer utilities {
   body,
   html {
-    font-family: "Helvetica", "Arial", sans-serif;
-    color: #444444;
+    font-family: "ReadexPro", "Helvetica", "Arial", sans-serif;
+    color: #555;
     font-size: 16px;
+    background-color: #f5f5f5;
+  }
+
+  h1,
+  h2 {
+    font-size: 1.26rem;
+    font-weight: 500;
+  }
+
+  b {
+    @apply font-bold;
+  }
+
+  p,
+  span {
+    font-family: "Inter", "Helvetica", "Arial", sans-serif;
+  }
+
+  nav a {
+    @apply font-normal;
+  }
+
+  a.active,
+  nav a:hover {
+    @apply font-bold text-fontOrange;
   }
 }
