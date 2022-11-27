@@ -31,7 +31,7 @@ const Teaser = (props: {
           <h2 className="mt-3">
             <b>{headline} </b>
           </h2>
-          <p className="mt-3">{content}</p>
+          <p className="mt-3 text-lg font-bold">{content}</p>
         </div>
         <div className="hidden lg:flex lg:flex-row lg:flex-wrap lg:gap-2 lg:mt-4">
           {chips &&
