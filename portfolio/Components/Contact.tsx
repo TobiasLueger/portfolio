@@ -3,9 +3,9 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div className="flex flex-row justify-center items-center fixed bottom-2 right-2 px-4 py-2 bg-fontOrange z-50 rounded-3xl text-white">
-      <ChatsTeardrop size={32} color="#ffffff" weight="fill" />
-      <p className="ml-2">Contact Me</p>
+    <div className="flex flex-row justify-center items-center fixed bottom-7 right-3 px-4 lg:px-6 py-2 lg:py-3 bg-fontOrange z-50 rounded-full text-white shadow-2xl cursor-pointer">
+      <ChatsTeardrop size={40} color="#ffffff" weight="fill" />
+      <p className="lg:text-xl ml-2">Contact Me</p>
     </div>
   );
 };

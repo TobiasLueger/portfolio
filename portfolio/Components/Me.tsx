@@ -4,19 +4,21 @@ import Chip from "./Chip";
 
 const Me = ({}) => {
   return (
-    <div className="w-full flex flex-col flex-wrap md:flex-row overflow-hidden px-4 lg:pt-72">
+    <div className="w-full flex flex-col flex-wrap md:flex-row overflow-hidden px-4 lg:pt-40">
       <div className="w-full flex flex-col justify-start items-start">
-        <h1 className="lg:text-3xl">
-          Hi, I am <b>Tobi</b>.
+        <h1 className="lg:text-4xl mb-3 lg:mb-7">
+          Hi there, my name is <b>Tobi</b>.
         </h1>
-        <h2 className="lg:text-3xl">
-          I`m an frondend developer and passionate about{" "}
-          <b>digital solutions</b> and <b>design</b>.
+        <h2 className="lg:leading-[3.3rem] lg:text-4xl">
+          I am an <b>Frondend Developer</b> and passionate about{" "}
+          <b className="text-fontNavyBlue">digital solutions</b>,{" "}
+          <b className="text-fontPurple">inventions</b> and{" "}
+          <b className="text-fontGreen">design</b>.
         </h2>
       </div>
-      <div className="w-full  lg:w-1/2 flex flex-col justify-start items-start mt-5">
-        <h2>What I love:</h2>
-        <div className="w-full flex flex-row flex-wrap gap-2 mt-3">
+      <div className="w-full  lg:w-1/2 flex flex-col justify-start items-start mt-6 lg:mt-16">
+        <h2 className="lg:text-4xl">Stuff that i like and care about</h2>
+        <div className="w-full flex flex-row flex-wrap gap-2 mt-4 lg:mt-6">
           <Chip text="React"></Chip>
           <Chip text="React Native"></Chip>
           <Chip text="Storybook"></Chip>
@@ -27,6 +29,10 @@ const Me = ({}) => {
           <Chip text="Jira"></Chip>
           <Chip text="Adobe XD"></Chip>
           <Chip text="ES6"></Chip>
+          <Chip text="Bouldering"></Chip>
+          <Chip text="Gaming"></Chip>
+          <Chip text="Family"></Chip>
+          <Chip text="Friends"></Chip>
         </div>
       </div>
 
@@ -34,7 +40,7 @@ const Me = ({}) => {
         <Image
           src="/img/me.svg"
           alt="Mein Bild"
-          className="w-full lg:w-1/2 z-10"
+          className="w-2/3 z-10"
           width={2698}
           height={4059}
         />

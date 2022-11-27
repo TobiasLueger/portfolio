@@ -15,8 +15,7 @@
 
   h1,
   h2 {
-    font-size: 1.26rem;
-    font-weight: 500;
+    @apply text-xl font-normal;
   }
 
   b {
@@ -29,7 +28,7 @@
   }
 
   nav a {
-    @apply font-normal text-grey no-underline lg:text-2xl lg:text-end;
+    @apply font-medium text-grey no-underline lg:text-3xl lg:text-end lg:py-6 lg:first:pt-0 lg:pr-20;
   }
 
   a {
@@ -38,6 +37,6 @@
 
   a.active,
   nav a:hover {
-    @apply font-bold text-fontOrange;
+    @apply text-fontOrange font-bold;
   }
 }
