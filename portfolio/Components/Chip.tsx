@@ -5,7 +5,7 @@ const Chip = (props: { text: string; teaser?: boolean }) => {
   return (
     <div
       className={`w-fit ${
-        teaser ? "" : "lg:text-2xl"
+        teaser ? "" : "lg:text-xl"
       } px-4 py-1 rounded-xl bg-bgChip text-[#333]`}
     >
       {text}

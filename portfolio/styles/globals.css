@@ -28,7 +28,7 @@
   }
 
   nav a {
-    @apply font-medium text-grey no-underline lg:text-3xl lg:text-end lg:py-6 lg:first:pt-0 lg:pr-20;
+    @apply font-bold text-grey no-underline lg:text-2xl lg:text-end lg:py-6 lg:first:pt-0 lg:pr-20;
   }
 
   a {

@@ -1,7 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import Chip from "./Chip";
 import Teaser from "./Teaser";
 
 const Work = () => {

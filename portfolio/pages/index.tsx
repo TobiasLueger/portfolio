@@ -12,6 +12,19 @@ const Home: NextPage = () => {
       <Head>
         <title>Tobias Lüger - Frondend Developer</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="application-name" content="Tobias Lüger"></meta>
+        <meta
+          property="og:title"
+          content="Tobias Lüger - Frondend Developer"
+        ></meta>
+        <meta
+          name="description"
+          content="Tobias Lüger is an Frondend Developer and passionate about digital solutions, inventions and design."
+        ></meta>
+        <meta
+          property="og:description"
+          content="Tobias Lüger is an Frondend Developer and passionate about digital solutions, inventions and design."
+        ></meta>
       </Head>
       <Navigation></Navigation>
 
