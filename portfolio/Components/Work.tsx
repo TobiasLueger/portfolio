@@ -8,7 +8,7 @@ const Work = () => {
   return (
     <div
       id="projects"
-      className="flex flex-col lg:flex-row lg:flex-wrap gap-10 mt-20"
+      className="flex flex-col lg:flex-row lg:flex-wrap gap-10 lg:gap-0 mt-20"
     >
       <h2 className="lg:w-full lg:px-6 text-2xl lg:text-3xl px-4">
         <b>My Projects</b>
