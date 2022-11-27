@@ -12,22 +12,22 @@ const Navigation = () => {
           Home
         </Link>
         <Link
-          href="#projects"
-          className={router.pathname == "/#projects" ? "active" : ""}
+          href="/projects"
+          className={router.pathname == "/projects" ? "active" : ""}
         >
-          Projekte
+          Projects
         </Link>
         <Link
-          href="/werdegang"
-          className={router.pathname == "/werdegang" ? "active" : ""}
+          href="/resume"
+          className={router.pathname == "/resume" ? "active" : ""}
         >
-          Werdegang
+          Resume
         </Link>
         <Link
-          href="/leben"
-          className={router.pathname == "/leben" ? "active" : ""}
+          href="/life"
+          className={router.pathname == "/life" ? "active" : ""}
         >
-          Leben
+          Life
         </Link>
       </nav>
     </header>

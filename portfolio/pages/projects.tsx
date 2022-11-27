@@ -6,7 +6,7 @@ import Me from "../Components/Me";
 import Navigation from "../Components/Navigation";
 import Work from "../Components/Work";
 
-const Home: NextPage = () => {
+const Projects: NextPage = () => {
   return (
     <div className="">
       <Head>
@@ -25,4 +25,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Projects;

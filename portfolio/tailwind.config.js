@@ -13,6 +13,7 @@ module.exports = {
       bgWhite: "#f5f5f5",
       fontOrange: "#e76f51",
       grey: "#555",
+      greyDark: "#333",
     },
     extend: {},
   },

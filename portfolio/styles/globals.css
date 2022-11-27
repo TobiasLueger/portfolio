@@ -20,7 +20,7 @@
   }
 
   b {
-    @apply font-bold;
+    @apply font-bold text-greyDark;
   }
 
   p,
@@ -29,7 +29,11 @@
   }
 
   nav a {
-    @apply font-normal;
+    @apply font-normal text-grey no-underline lg:text-2xl lg:text-end;
+  }
+
+  a {
+    @apply text-fontOrange underline underline-offset-2;
   }
 
   a.active,

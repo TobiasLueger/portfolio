@@ -4,13 +4,13 @@ import Chip from "./Chip";
 
 const Me = ({}) => {
   return (
-    <div className="w-full flex flex-col flex-wrap md:flex-row overflow-hidden px-4">
+    <div className="w-full flex flex-col flex-wrap md:flex-row overflow-hidden px-4 lg:pt-72">
       <div className="w-full flex flex-col justify-start items-start">
-        <h1 className="">
+        <h1 className="lg:text-3xl">
           Hi, I am <b>Tobi</b>.
         </h1>
-        <h2>
-          I am a frondend developer and passionate about{" "}
+        <h2 className="lg:text-3xl">
+          I`m an frondend developer and passionate about{" "}
           <b>digital solutions</b> and <b>design</b>.
         </h2>
       </div>

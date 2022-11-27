@@ -9,14 +9,14 @@ const Work = () => {
       <h2 className="lg:w-full lg:px-4">Portfolio</h2>
       <Link
         href="/blinddate"
-        className="lg:w-[45%] lg:rounded-2xl lg:hover:bg-bgGrey lg:p-4"
+        className="lg:w-[45%] lg:rounded-2xl lg:hover:bg-bgGrey lg:p-4 group"
       >
         <Image
           src="/img/blinddate.png"
           alt={""}
           width="920"
           height="920"
-          className="lg:rounded-xl lg:h-[300px] lg:object-cover"
+          className="lg:rounded-xl lg:object-cover group-hover:scale-105"
         ></Image>
         <div>
           <h2>
@@ -40,7 +40,7 @@ const Work = () => {
           alt={""}
           width="920"
           height="920"
-          className="lg:rounded-xl lg:h-[300px] lg:object-cover"
+          className="lg:rounded-xl lg:object-cover"
         ></Image>
         <div>
           <h2>
@@ -61,7 +61,7 @@ const Work = () => {
           alt={""}
           width="920"
           height="920"
-          className="lg:rounded-xl lg:h-[300px] lg:object-cover"
+          className="lg:rounded-xl lg:object-cover"
         ></Image>
         <div>
           <h2>
