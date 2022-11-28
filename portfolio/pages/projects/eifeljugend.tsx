@@ -1,12 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Contact from "../Components/Contact";
-import Footer from "../Components/Footer";
-import Me from "../Components/Me";
-import Navigation from "../Components/Navigation";
-import Work from "../Components/Work";
+import Contact from "../../Components/Contact";
+import Footer from "../../Components/Footer";
+import Me from "../../Components/Me";
+import Navigation from "../../Components/Navigation";
+import Work from "../../Components/Work";
 
-const Projects: NextPage = () => {
+const Eifeljugend: NextPage = () => {
   return (
     <div className="">
       <Head>
@@ -16,6 +16,7 @@ const Projects: NextPage = () => {
       <Navigation></Navigation>
 
       <main>
+        <Me></Me>
         <Work></Work>
       </main>
       <Footer></Footer>
@@ -24,4 +25,4 @@ const Projects: NextPage = () => {
   );
 };
 
-export default Projects;
+export default Eifeljugend;

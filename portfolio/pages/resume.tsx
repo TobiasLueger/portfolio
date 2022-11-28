@@ -15,7 +15,7 @@ const Resume: NextPage = () => {
       </Head>
       <Navigation></Navigation>
 
-      <main className="flex w-full lg:w-3/4 lg:absolute lg:right-0 flex-1 flex-col mt-14 max-w-[128rem]">
+      <main>
         <Me></Me>
         <Work></Work>
       </main>

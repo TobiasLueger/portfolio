@@ -20,7 +20,7 @@ module.exports = {
         fontGreen: "#3F826D",
       },
       screens: {
-        footerHeight: { raw: "(max-height: 580px)" },
+        footerHeight: { raw: "(max-height: 675px)" },
         // => @media (min-height: 800px) { ... }
       },
     },

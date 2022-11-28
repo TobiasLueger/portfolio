@@ -13,6 +13,10 @@
     background-color: #f5f5f5;
   }
 
+  main {
+    @apply flex w-full lg:w-3/4 lg:absolute lg:right-0 flex-1 flex-col lg:pt-24 mt-14 max-w-[128rem];
+  }
+
   h1,
   h2 {
     @apply text-xl font-normal;
@@ -28,7 +32,7 @@
   }
 
   nav a {
-    @apply font-bold text-grey no-underline lg:text-2xl lg:text-end lg:py-6 lg:first:pt-0 lg:pr-20;
+    @apply font-bold text-grey no-underline lg:text-2xl lg:text-end lg:py-6 lg:first:pt-0 lg:pr-7 xl:pr-12;
   }
 
   a {

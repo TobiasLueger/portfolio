@@ -4,7 +4,7 @@ import Chip from "./Chip";
 
 const Me = ({}) => {
   return (
-    <div className="w-full flex flex-col flex-wrap md:flex-row overflow-hidden px-4 lg:pt-40">
+    <div className="w-full flex flex-col flex-wrap md:flex-row overflow-hidden px-4">
       <div className="w-full flex flex-col justify-start items-start">
         <h1 className="lg:text-3xl mb-3 lg:mb-7">
           Hi there, my name is <b>Tobi</b>.

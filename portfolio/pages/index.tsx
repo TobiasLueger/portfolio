@@ -26,9 +26,9 @@ const Home: NextPage = () => {
           content="Tobias Lüger is an Frondend Developer and passionate about digital solutions, inventions and design."
         ></meta>
       </Head>
-      <Navigation></Navigation>
 
-      <main className="flex w-full lg:w-3/4 lg:absolute lg:right-0 flex-1 flex-col mt-14 max-w-[128rem]">
+      <Navigation></Navigation>
+      <main>
         <Me></Me>
         <Work></Work>
       </main>
