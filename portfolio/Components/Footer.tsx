@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="flex justify-between mb-5 lg:mb-0">
           <Link
             href="https://streamlabs.com/oftoto/tip"
-            className="no-underline flex flex-row items-center bg-bgChip text-greyDark py-1 px-2 rounded-lg w-fit"
+            className="no-underline flex flex-row items-center bg-bgChip text-greyDark py-1 px-2 rounded-lg w-fit font-medium"
           >
             <Heart color="red" weight="fill" size={16} className="mr-2" />
             Support me
