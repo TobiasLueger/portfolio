@@ -33,12 +33,13 @@ const Teaser = (props: {
           </h2>
           <p className="mt-3 text-lg font-bold">{content}</p>
         </div>
-        <div className="hidden lg:flex lg:flex-row lg:flex-wrap lg:gap-2 lg:mt-4">
-          {chips &&
-            chips.map((chip: string) => (
+        {chips && (
+          <div className="hidden lg:flex lg:flex-row lg:flex-wrap lg:gap-2 lg:mt-4">
+            {chips.map((chip: string) => (
               <Chip text={chip} teaser={true}></Chip>
             ))}
-        </div>
+          </div>
+        )}
       </div>
     </Link>
   );

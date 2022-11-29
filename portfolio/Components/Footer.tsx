@@ -28,7 +28,7 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col w-full justify-center lg:justify-end items-center lg:items-end mb-16 lg:mb-0">
-          <p className="flex items-center justify-center lg:justify-end lg:text-right mb-2 lg:mb-0">
+          <p className="flex items-center justify-center lg:justify-end lg:text-right mb-2 lg:mb-0 text-base">
             <Copyright
               size={16}
               color="#555"
@@ -39,7 +39,10 @@ const Footer = () => {
           </p>
           <small className="break-normal mb-2 lg:mb-0">
             Find me at
-            <Link href="mailto:tobias-lueger@web.de" className="ml-2 no">
+            <Link
+              href="mailto:tobias-lueger@web.de"
+              className="ml-2 font-medium"
+            >
               tobias-lueger@web.de
             </Link>
           </small>

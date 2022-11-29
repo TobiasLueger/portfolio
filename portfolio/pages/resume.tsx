@@ -16,8 +16,10 @@ const Resume: NextPage = () => {
       <Navigation></Navigation>
 
       <main>
-        <Me></Me>
-        <Work></Work>
+        {/* <Me></Me>
+        <Work></Work> */}
+        <p>- was mache ich gerade </p>
+        <p>- werdegang (Schule, Ausbildung, Arbeit)</p>
       </main>
       <Footer></Footer>
       <Contact></Contact>

@@ -17,6 +17,10 @@
     @apply flex w-full lg:w-3/4 lg:absolute lg:right-0 flex-1 flex-col lg:pt-24 mt-14 max-w-[128rem];
   }
 
+  section {
+    @apply mb-16 lg:mb-20 px-4;
+  }
+
   h1,
   h2 {
     @apply text-xl font-normal;
@@ -31,12 +35,16 @@
     font-family: "Inter", "Helvetica", "Arial", sans-serif;
   }
 
+  p {
+    @apply text-lg lg:text-2xl lg:leading-[3rem];
+  }
+
   nav a {
-    @apply font-bold text-grey no-underline lg:text-2xl lg:text-end lg:py-6 lg:first:pt-0 lg:pr-7 xl:pr-12;
+    @apply font-bold text-greyDark no-underline lg:text-2xl lg:text-end lg:py-6 lg:first:pt-0 lg:pr-7 xl:pr-12;
   }
 
   a {
-    @apply text-fontOrange underline underline-offset-2;
+    @apply text-fontOrange underline underline-offset-2 font-bold;
   }
 
   a.active,
