@@ -24,6 +24,7 @@ const Me = ({}) => {
           <Chip text="Storybook"></Chip>
           <Chip text="TailwindCSS"></Chip>
           <Chip text="Cypress"></Chip>
+          <Chip text="Git"></Chip>
           <Chip text="Typescript"></Chip>
           <Chip text="Figma"></Chip>
           <Chip text="Jira"></Chip>

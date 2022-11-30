@@ -17,7 +17,7 @@ const Life: NextPage = () => {
     Images.tripsdrill,
     Images.phantasia,
   ];
-  console.log(parkList);
+  const funList = [Images.climbing, Images.coaster];
   return (
     <div className="">
       <Head>
@@ -28,6 +28,9 @@ const Life: NextPage = () => {
       {/*TODO: texte deinieren*/}
       <main>
         <section>
+          <h1 className="lg:leading-[2.6rem] lg:text-3xl lg:leading-[3.2rem] font-bold text-greyDark">
+            Life
+          </h1>
           <h2 className="lg:leading-[2.6rem] lg:text-3xl lg:leading-[3.2rem]">
             I spend my free time ... to be defined Lorem ipsum, dolor sit amet
             consectetur adipisicing elit. Tenetur, quod necessitatibus obcaecati
@@ -45,7 +48,26 @@ const Life: NextPage = () => {
             corrupti provident totam quas sed culpa dignissimos suscipit illum
             voluptatem nesciunt debitis vitae quae, pariatur deserunt vero
             magni."
+            classes="mb-8"
           ></HeadText>
+          <div>
+            <div className="flex flex-row flex-wrap gap-4">
+              {funList &&
+                funList.map((image) => {
+                  return (
+                    <div className="max-h-52 max-w-52 h-52 w-52 bg-white rounded-xl object-cover flex justify-center items-center shadow-lg">
+                      <Image
+                        src={image.src}
+                        alt={""}
+                        width="200"
+                        height="200"
+                        className="lg:rounded-xl lg:object-cover max-h-52 max-w-52"
+                      ></Image>
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
         </section>
 
         <section>

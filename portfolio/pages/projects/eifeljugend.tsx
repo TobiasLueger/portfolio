@@ -4,6 +4,7 @@ import Contact from "../../Components/Contact";
 import Footer from "../../Components/Footer";
 import Me from "../../Components/Me";
 import Navigation from "../../Components/Navigation";
+import Project from "../../Components/Project";
 import Work from "../../Components/Work";
 
 const Eifeljugend: NextPage = () => {
@@ -16,8 +17,7 @@ const Eifeljugend: NextPage = () => {
       <Navigation></Navigation>
 
       <main>
-        <Me></Me>
-        <Work></Work>
+        <Project projectTitle="Eifeljugend"></Project>
       </main>
       <Footer></Footer>
       <Contact></Contact>

@@ -2,7 +2,7 @@ import React from "react";
 
 const HeadText = (props: {
   headline: any;
-  context: string;
+  context?: string;
   classes?: string;
 }) => {
   const { headline, context, classes } = props;
@@ -11,7 +11,7 @@ const HeadText = (props: {
       <h2 className="font-bold lg:text-3xl mb-5 lg:mb-8 text-greyDark">
         {headline}
       </h2>
-      <p dangerouslySetInnerHTML={{ __html: context }}></p>
+      {context && <p dangerouslySetInnerHTML={{ __html: context }}></p>}
     </div>
   );
 };

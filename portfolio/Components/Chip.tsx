@@ -1,12 +1,10 @@
 import React from "react";
 
-const Chip = (props: { text: string; teaser?: boolean }) => {
-  const { text, teaser } = props;
+const Chip = (props: { text: string; teaser?: boolean; classes?: string }) => {
+  const { text, teaser, classes } = props;
   return (
     <div
-      className={`w-fit ${
-        teaser ? "" : "lg:text-xl"
-      } px-4 py-1 rounded-xl bg-bgChip text-[#333]`}
+      className={`${classes} w-fit lg:text-xl px-4 py-1 rounded-xl bg-bgChip text-[#333]`}
     >
       {text}
     </div>

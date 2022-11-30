@@ -4,6 +4,7 @@ import Contact from "../../Components/Contact";
 import Footer from "../../Components/Footer";
 import Me from "../../Components/Me";
 import Navigation from "../../Components/Navigation";
+import Project from "../../Components/Project";
 import Work from "../../Components/Work";
 
 const Blinddate: NextPage = () => {
@@ -16,8 +17,7 @@ const Blinddate: NextPage = () => {
       <Navigation></Navigation>
 
       <main>
-        <Me></Me>
-        <Work></Work>
+        <Project projectTitle="Blind Date"></Project>
       </main>
       <Footer></Footer>
       <Contact></Contact>

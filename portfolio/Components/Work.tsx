@@ -1,6 +1,7 @@
 import React from "react";
 import Teaser from "./Teaser";
 import { useRouter } from "next/router";
+import HeadText from "./HeadText";
 
 const Work = () => {
   const router = useRouter();
@@ -11,22 +12,24 @@ const Work = () => {
         router.pathname == "/projects" ? "mt-0" : "mt-20"
       }`}
     >
-      <h2 className="lg:w-full lg:px-6 text-xl lg:text-2xl px-4 lg:mb-4">
-        <b>My Projects</b>
-      </h2>
+      <HeadText
+        headline="My Projects"
+        classes="lg:w-full lg:px-6 px-4 lg:mb-4"
+      ></HeadText>
       <Teaser
         link="/projects/blinddate"
         img="/img/blinddate.png"
         headline="BlindDate"
         content="A slightly different dating app"
-        chips={["React Native", "Test"]}
+        chips={["React Native", "Expo", "UI/UX"]}
+        noFinish={true}
       ></Teaser>
       <Teaser
         link="/projects/eifeljugend"
         img="/img/eifeljugend.png"
         headline="Eifeljugend"
         content="Webapp for hike organization"
-        chips=""
+        chips={["React", "TailwindCSS", "Storybook", "Git", "UI/UX"]}
         margin={router.pathname == "/projects" ? false : true}
       ></Teaser>
       <Teaser
@@ -34,7 +37,7 @@ const Work = () => {
         img="/img/tina.png"
         headline="Trust Me"
         content="More clarity for your life"
-        chips=""
+        chips={["Wordpress", "UI/UX", "Programming"]}
       ></Teaser>
 
       {/* <a href="https://github.com/Blind-Date-Official/BlindDate">
