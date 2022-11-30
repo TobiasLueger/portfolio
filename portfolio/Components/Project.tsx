@@ -1,6 +1,6 @@
 import React from "react";
 
-const Project = (props) => {
+const Project = (props: { projectTitle: string }) => {
   const { projectTitle } = props;
   return (
     <div>
