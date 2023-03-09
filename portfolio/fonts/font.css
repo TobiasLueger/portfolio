@@ -3,6 +3,7 @@
   src: url("Inter.ttf");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -10,4 +11,5 @@
   src: url("ReadexPro.ttf");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
