@@ -44,6 +44,7 @@ const Me = ({}) => {
           className="w-2/3 z-10"
           width={2698}
           height={4059}
+          priority
         />
       </div>
     </div>
