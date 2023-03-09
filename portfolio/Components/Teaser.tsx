@@ -27,6 +27,7 @@ const Teaser = (props: {
         width="920"
         height="920"
         className="lg:rounded-xl lg:object-cover"
+        sizes="(max-width: 1023px) 100vw, 50vw"
       ></Image>
       <div className="pl-4 lg:pl-2">
         <div>
