@@ -62,6 +62,7 @@ const Life: NextPage = () => {
                         width="200"
                         height="200"
                         className="lg:rounded-xl lg:object-cover max-h-52 max-w-52"
+                        sizes="(max-width: 1023px) 100vw, 33vw"
                       ></Image>
                     </div>
                   );
@@ -91,6 +92,7 @@ const Life: NextPage = () => {
                       width="200"
                       height="200"
                       className="lg:rounded-xl lg:object-cover max-h-52 max-w-52"
+                      sizes="(max-width: 1023px) 100vw, 33vw"
                     ></Image>
                   </div>
                 );

@@ -45,6 +45,7 @@ const Me = ({}) => {
           width={2698}
           height={4059}
           priority
+          sizes="(max-width: 1023px) 100vw, 50vw"
         />
       </div>
     </div>

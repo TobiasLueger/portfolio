@@ -18,6 +18,7 @@ const WorkListTeaser = (props: {
           width="90"
           height="90"
           className=" lg:object-cover max-w-[90px] max-h-[90px]"
+          sizes="(max-width: 1023px) 50vw, 33vw"
         ></Image>
       </div>
       <div>
