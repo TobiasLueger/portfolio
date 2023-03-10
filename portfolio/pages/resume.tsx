@@ -106,7 +106,7 @@ const Resume: NextPage = () => {
                 company="GitHub"
                 place="Remote"
                 jobTitel="Open Source Contributor"
-                date="2021 - nowqqqq"
+                date="2021 - now"
               ></WorkListTeaser>
             </div>
           </section>
