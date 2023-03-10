@@ -8,10 +8,22 @@ import Work from "../Components/Work";
 
 const Projects: NextPage = () => {
   return (
-    <div className="">
+    <div>
       <Head>
-        <title>Tobias Lüger - Frondend Developer</title>
+        <title>Tobias Lüger - Projects</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          property="og:title"
+          content="Tobias Lüger - Projects"
+        ></meta>
+        <meta
+          name="description"
+          content="The projects Tobias Lüger is working or has worked on."
+        ></meta>
+        <meta
+          property="og:description"
+          content="The projects Tobias Lüger is working or has worked on."
+        ></meta>
       </Head>
       <Navigation></Navigation>
 

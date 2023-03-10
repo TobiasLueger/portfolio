@@ -11,10 +11,22 @@ import * as ImgMap from "../public/img/imgMap";
 
 const Resume: NextPage = () => {
   return (
-    <div className="">
+    <div>
       <Head>
-        <title>Tobias Lüger - Frondend Developer</title>
+        <title>Tobias Lüger - Resume</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          property="og:title"
+          content="Tobias Lüger - Resume"
+        ></meta>
+        <meta
+          name="description"
+          content="This is Tobias Lüger's resume and where he has already worked"
+        ></meta>
+        <meta
+          property="og:description"
+          content="This is Tobias Lüger's resume and where he has already worked"
+        ></meta>
       </Head>
       <Navigation></Navigation>
       {/*TODO: texte deinieren*/}

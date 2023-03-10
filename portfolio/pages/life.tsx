@@ -19,10 +19,23 @@ const Life: NextPage = () => {
   ];
   const funList = [Images.climbing, Images.coaster];
   return (
-    <div className="">
+    <div>
       <Head>
-        <title>Tobias Lüger - Frondend Developer</title>
+        <title>Tobias Lüger - Life</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="application-name" content="Tobias Lüger"></meta>
+        <meta
+          property="og:title"
+          content="Tobias Lüger - Life"
+        ></meta>
+        <meta
+          name="description"
+          content="This is what Tobias Lüger likes to do in his free time and in his life outside of work."
+        ></meta>
+        <meta
+          property="og:description"
+          content="This is what Tobias Lüger likes to do in his free time and in his life outside of work."
+        ></meta>
       </Head>
       <Navigation></Navigation>
       {/*TODO: texte deinieren*/}
