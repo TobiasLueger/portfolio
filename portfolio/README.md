@@ -37,8 +37,8 @@ This project was built using these technologies.
 
 - Next.js
 - Node.js
-- phosphor-react
-- Tailwind
+- Phosphor Icons
+- TailwindCSS
 - VsCode
 - Vercel
 
