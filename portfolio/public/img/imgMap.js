@@ -14,4 +14,6 @@ export { default as github } from "./work/github.png";
 
 export { default as climbing } from "./climbing.png";
 export { default as coaster } from "./parks/coaster.png";
+
+export { default as siedler } from "./games/siedler.png";
 /* export { default as cards } from "./work/cards.png"; */

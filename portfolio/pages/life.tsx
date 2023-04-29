@@ -17,7 +17,8 @@ const Life: NextPage = () => {
     Images.tripsdrill,
     Images.phantasia,
   ];
-  const funList = [Images.climbing, Images.coaster];
+  const funList = [Images.climbing];
+  const gameList = [Images.siedler];
   return (
     <div>
       <Head>
@@ -35,29 +36,51 @@ const Life: NextPage = () => {
         ></meta>
       </Head>
       <Navigation></Navigation>
-      {/*TODO: texte deinieren*/}
       <main>
         <section>
           <h1 className="lg:leading-[2.6rem] lg:text-3xl lg:leading-[3.2rem] font-bold text-greyDark">
             Life
           </h1>
           <h2 className="lg:leading-[2.6rem] lg:text-3xl lg:leading-[3.2rem]">
-            I spend my free time ... to be defined Lorem ipsum, dolor sit amet
-            consectetur adipisicing elit. Tenetur, quod necessitatibus obcaecati
-            corrupti provident totam quas sed culpa dignissimos suscipit illum
-            voluptatem nesciunt debitis vitae quae, pariatur deserunt vero
-            magni.
+            As an adventure seeker, I am always on the lookout for exciting
+            activities to fill my free time. One of my favorite hobbies are
+            playing board games go climbing or explore several amusement parks.
           </h2>
         </section>
-
+        <section>
+          <HeadText
+            headline="Board Games"
+            context="I love the strategy, creativity, and problem-solving skills required to excel at board games. I often spend hours playing with my friends and family, and I'm known for having an extensive collection of them."
+            classes="mb-8"
+          ></HeadText>
+          <div>
+            <div className="flex flex-row flex-wrap gap-4">
+              {gameList &&
+                gameList.map((image) => {
+                  return (
+                    <div className="max-h-52 max-w-52 h-52 w-52 bg-white rounded-xl object-cover flex justify-center items-center shadow-lg">
+                      <Image
+                        src={image.src}
+                        alt={""}
+                        width="200"
+                        height="200"
+                        className="lg:rounded-xl lg:object-cover max-h-52 max-w-52"
+                        sizes="(max-width: 1023px) 50vw, 33vw"
+                      ></Image>
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
+        </section>
         <section>
           <HeadText
             headline="Climbing"
-            context="Was bewegt mich <a href='#'>test</a> Lorem ipsum, dolor sit amet
-            consectetur adipisicing elit. Tenetur, quod necessitatibus obcaecati
-            corrupti provident totam quas sed culpa dignissimos suscipit illum
-            voluptatem nesciunt debitis vitae quae, pariatur deserunt vero
-            magni."
+            context="I also have a passion for climbing, both indoors and outdoors. There's
+            nothing quite like the feeling of reaching the top of a challenging
+            climb, and I'm always pushing myself to improve. Whether I'm at my local
+            climbing gym or exploring new mountains, I'm always looking for my next
+            climbing adventure."
             classes="mb-8"
           ></HeadText>
           <div>
@@ -80,15 +103,14 @@ const Life: NextPage = () => {
             </div>
           </div>
         </section>
-
         <section>
           <HeadText
-            headline="Adrenaline"
-            context="Was bewegt mich <a href='#'>test</a> Lorem ipsum, dolor sit amet
-            consectetur adipisicing elit. Tenetur, quod necessitatibus obcaecati
-            corrupti provident totam quas sed culpa dignissimos suscipit illum
-            voluptatem nesciunt debitis vitae quae, pariatur deserunt vero
-            magni."
+            headline="Amusement Parks"
+            context="And when I'm not climbing or playing board games, you can usually find
+            me at an amusement park. Phantasialand and Europa-Park are two of my
+            favorites, and I've been lucky enough to visit them multiple times.
+            There's just something about the thrill of riding roller coasters and
+            experiencing new attractions that I can't get enough of."
             classes="mb-8"
           ></HeadText>
           <div className="flex flex-row flex-wrap gap-4">
@@ -109,8 +131,15 @@ const Life: NextPage = () => {
               })}
           </div>
         </section>
-
-        <section></section>
+        <section>
+          <p>
+            Overall, my life is a perfect blend of adventure, strategy, and fun.
+            Whether I'm playing board games, climbing, or exploring amusement
+            parks, I'm always seeking new challenges and experiences. And with
+            so many exciting activities out there, there's always something new
+            to discover and enjoy.
+          </p>
+        </section>
       </main>
       <Footer></Footer>
       <Contact></Contact>

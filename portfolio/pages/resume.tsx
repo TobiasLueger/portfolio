@@ -26,26 +26,30 @@ const Resume: NextPage = () => {
         ></meta>
       </Head>
       <Navigation></Navigation>
-      {/*TODO: texte deinieren*/}
       <main>
         <section>
           <h1 className="lg:leading-[2.6rem] lg:text-3xl lg:leading-[3.2rem] font-bold text-greyDark">
             Resume
           </h1>
           <h2 className="lg:leading-[2.6rem] lg:text-3xl lg:leading-[3.2rem]">
-            I am currently ... to be defined Lorem ipsum dolor sit, amet
-            consectetur adipisicing elit. Illo facilis, eveniet placeat
-            reprehenderit voluptas perferendis odio minima rerum fugiat deleniti
-            sit ut sequi quasi illum perspiciatis alias officia possimus harum.
+            As a skilled Frontend Developer with hands-on experience, I bring a
+            strong background in HTML, CSS, and JavaScript to every project.
+            Currently working at brandung GmbH in Cologne, I have a proven track
+            record of developing visually stunning and responsive websites that
+            improve user engagement and drive conversions. I am passionate about
+            staying up-to-date with the latest industry trends and tools to
+            deliver exceptional results. If you're looking for a reliable and
+            talented Frontend Developer, look no further.
           </h2>
         </section>
         <section>
           <HeadText
-            headline="test"
-            context="All over the years <a href='#'>Frondend Developer</a> Lorem ipsum dolor sit, amet
-            consectetur adipisicing elit. Illo facilis, eveniet placeat
-            reprehenderit voluptas perferendis odio minima rerum fugiat deleniti
-            sit ut sequi quasi illum perspiciatis alias officia possimus harum."
+            headline="Skills"
+            context="As a Frontend Developer, I possess a diverse skillset that enables me to deliver outstanding results for every project. With expertise in React, React Native, and NextJS, I am proficient in developing scalable and performant web applications that meet client requirements. I also have extensive experience in using Storybook, TailwindCSS, and Cypress for UI design, development, and testing.
+
+            I am proficient in Git and Typescript, which helps me maintain code quality and streamline the development process. My proficiency in Figma and Adobe XD enables me to create engaging designs that align with client vision and project goals.
+            
+            Furthermore, I have experience using Jira to manage project timelines, track progress, and communicate with team members effectively."
           ></HeadText>
         </section>
         <div className="flex flex-col lg:flex-row flex-wrap">

@@ -21,6 +21,7 @@ const Me = ({}) => {
         <div className="w-full flex flex-row flex-wrap gap-2 mt-4 lg:mt-6">
           <Chip text="React"></Chip>
           <Chip text="React Native"></Chip>
+          <Chip text="NextJS"></Chip>
           <Chip text="Storybook"></Chip>
           <Chip text="TailwindCSS"></Chip>
           <Chip text="Cypress"></Chip>
