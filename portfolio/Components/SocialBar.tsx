@@ -6,7 +6,7 @@ const SocialBar = ({}) => {
   return (
     <div className="flex flex-row gap-2">
       <Link
-        href={"https://www.instagram.com/designwithtobi/"}
+        href={"https://www.instagram.com/design_with_tobi/"}
         className="mx-1 hover:opacity-60 transition-all"
       >
         <Image
@@ -24,6 +24,18 @@ const SocialBar = ({}) => {
         <Image
           src="/icons/xing.png"
           alt="Xing"
+          className="w-[24px]"
+          width={100}
+          height={100}
+        />
+      </Link>
+      <Link
+        href={"https://www.linkedin.com/in/tobias-l%C3%BCger-257903269/"}
+        className="mx-1 hover:opacity-60 transition-all"
+      >
+        <Image
+          src="/icons/linkedin.png"
+          alt="LinkedIn"
           className="w-[24px]"
           width={100}
           height={100}

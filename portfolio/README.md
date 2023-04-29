@@ -1,27 +1,76 @@
-# Next.js + Tailwind CSS Example
+<h2 align="center">
+  Portfolio Website - v1.0<br/>
+  <a href="https://tobias-lueger.de/" target="_blank">tobias-lueger.de</a>
+</h2>
+<div align="center">
+  <img alt="Demo" src="./public/img/mysite.png" />
+</div>
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+<br/>
 
-## Deploy your own
+<center>
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) &nbsp;
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) &nbsp;
+[![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com) &nbsp;
+![GitHub Repo stars](https://img.shields.io/github/stars/TobiasLueger/portfolio?color=red&logo=github&style=for-the-badge) &nbsp;
+![GitHub forks](https://img.shields.io/github/forks/TobiasLueger/portfolio?color=red&logo=github&style=for-the-badge)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+</center>
 
-## How to use
+<h3 align="center">
+    🔹
+    <a href="https://github.com/TobiasLueger/portfolio/issues">Report Bug</a> &nbsp; &nbsp;
+    🔹
+    <a href="https://github.com/TobiasLueger/portfolio/issues">Request Feature</a>
+</h3>
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+## TL;DR
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-```
+You can fork this repo to modify and make changes of your own. Please give me proper credit by linking back to [TobiasLueger](https://github.com/TobiasLueger/portfolio). Thanks!
 
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+## Built With
 
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
+My personal portfolio <a href="https://tobias-lueger.de/" target="_blank">tobias-lueger.de</a> which features some of my github projects as well as my resume and technical skills.<br/>
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+This project was built using these technologies.
+
+- Next.js
+- Node.js
+- phosphor-react
+- Tailwind
+- VsCode
+- Vercel
+
+## Features
+
+**📖 Multi-Page Layout**
+
+**🎨 Styled with Tailwind**
+
+**📱 Fully Responsive**
+
+## Getting Started
+
+Clone down this repository. You will need `node.js` and `git` installed globally on your machine.
+
+## 🛠 Installation and Setup Instructions
+
+1. Installation: `npm install`
+
+2. In the project directory, you can run: `npm run dev`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The page will reload if you make edits.
+
+## Usage Instructions
+
+Open the project folder and Navigate to `/Components/`. <br/>
+You will find all the components used and you can edit your information accordingly.
+
+### Show your support
+
+Give a ⭐ if you like this website!
+
+<a href="https://streamlabs.com/oftoto/tip" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" height= "60px" width= "217px" ></a>

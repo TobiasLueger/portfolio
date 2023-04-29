@@ -15,10 +15,7 @@ const Resume: NextPage = () => {
       <Head>
         <title>Tobias Lüger - Resume</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          property="og:title"
-          content="Tobias Lüger - Resume"
-        ></meta>
+        <meta property="og:title" content="Tobias Lüger - Resume"></meta>
         <meta
           name="description"
           content="This is Tobias Lüger's resume and where he has already worked"
@@ -58,6 +55,7 @@ const Resume: NextPage = () => {
               <WorkListTeaser
                 img={ImgMap.brandung.src}
                 company="Frontend, brandung GmbH"
+                companyLink="https://www.agentur-brandung.de/"
                 place="Germany, Cologne"
                 jobTitel="Junior Frontend Developer"
                 date="Juli 2021 - now"
@@ -65,7 +63,8 @@ const Resume: NextPage = () => {
 
               <WorkListTeaser
                 img={ImgMap.djumla.src}
-                company="Frontend, Djumla "
+                company="Frontend, Djumla"
+                companyLink="https://www.djumla.de/"
                 place="Germany, Cologne"
                 jobTitel="Internship Frontend Developer"
                 date="Juli 2021 - now"
@@ -74,6 +73,7 @@ const Resume: NextPage = () => {
               <WorkListTeaser
                 img={ImgMap.lemm.src}
                 company="Frontend, Lemm Werbeagentur "
+                companyLink="https://www.lemm.de/"
                 place="Germany, Euskirchen"
                 jobTitel="Internship Frontend Developer"
                 date="Juli 2021 - now"
@@ -86,6 +86,7 @@ const Resume: NextPage = () => {
               <WorkListTeaser
                 img={ImgMap.brandung.src}
                 company="Frontend, brandung GmbH"
+                companyLink="https://www.agentur-brandung.de/"
                 place="Germany, Cologne"
                 jobTitel="Training as Media Designer"
                 date="Aug 2018 - Juli 2021"
@@ -93,6 +94,7 @@ const Resume: NextPage = () => {
               <WorkListTeaser
                 img={ImgMap.teb.src}
                 company="Thomas-Eßer-Berufskolleg"
+                companyLink="https://teb-eu.eu/TEB_HP/"
                 place="Germany, Euskirchen"
                 jobTitel="Training as Information Technology Assistant"
                 date="Aug 2015 - Aug 2018"
@@ -104,6 +106,7 @@ const Resume: NextPage = () => {
               <WorkListTeaser
                 img={ImgMap.github.src}
                 company="GitHub"
+                companyLink="https://github.com/TobiasLueger"
                 place="Remote"
                 jobTitel="Open Source Contributor"
                 date="2021 - now"

@@ -13,13 +13,11 @@ const Teaser = (props: {
   margin?: boolean;
   noFinish?: boolean;
 }) => {
-  const { img, headline, content, chips, link, margin, noFinish } = props;
+  const { img, headline, content, chips, link, noFinish } = props;
   return (
     <Link
       href={link}
-      className={`lg:w-[50%] lg:rounded-2xl lg:hover:bg-bgGrey lg:transition-all lg:p-6 group no-underline text-grey h-fit ${
-        margin && "lg:mt-36"
-      }`}
+      className={`lg:w-[50%] lg:rounded-2xl lg:hover:bg-bgGrey lg:transition-all lg:p-6 group no-underline text-grey h-fit`}
     >
       <Image
         src={img}

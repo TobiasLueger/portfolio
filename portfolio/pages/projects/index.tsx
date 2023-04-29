@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Contact from "../Components/Contact";
-import Footer from "../Components/Footer";
-import Me from "../Components/Me";
-import Navigation from "../Components/Navigation";
-import Work from "../Components/Work";
+import Contact from "../../Components/Contact";
+import Footer from "../../Components/Footer";
+import Me from "../../Components/Me";
+import Navigation from "../../Components/Navigation";
+import Work from "../../Components/Work";
 
 const Projects: NextPage = () => {
   return (
@@ -12,10 +12,7 @@ const Projects: NextPage = () => {
       <Head>
         <title>Tobias Lüger - Projects</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          property="og:title"
-          content="Tobias Lüger - Projects"
-        ></meta>
+        <meta property="og:title" content="Tobias Lüger - Projects"></meta>
         <meta
           name="description"
           content="The projects Tobias Lüger is working or has worked on."
