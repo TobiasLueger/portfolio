@@ -17,6 +17,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         "Firebase",
       ],
       noFinish: true,
+      imageBorder: false,
     },
     {
       link: "https://eifeljugend-rheinbach.de",
@@ -25,6 +26,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       content: "Webapp for hike organization",
       chips: ["React", "TailwindCSS", "Storybook", "Git", "UI/UX", "Vercel"],
       noFinish: false,
+      imageBorder: false,
     },
     {
       link: "https://martina-osthoff.de",
@@ -33,6 +35,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       content: "More clarity for your life",
       chips: ["Wordpress", "UI/UX", "Programming"],
       noFinish: false,
+      imageBorder: false,
     },
     {
       link: "https://tobias-lueger.de",
@@ -48,6 +51,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         "Vercel",
       ],
       noFinish: false,
+      imageBorder: true,
     },
   ]);
 }

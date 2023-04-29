@@ -38,6 +38,7 @@ const Work = () => {
           content={project.content}
           chips={project.chips}
           noFinish={project.noFinish}
+          imageBorder={project.imageBorder}
         ></Teaser>
       ))}
     </div>

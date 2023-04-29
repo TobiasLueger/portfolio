@@ -12,8 +12,17 @@ const Teaser = (props: {
   link: any;
   margin?: boolean;
   noFinish?: boolean;
+  imageBorder?: boolean;
 }) => {
-  const { img, headline, content, chips, link, noFinish } = props;
+  const {
+    img,
+    headline,
+    content,
+    chips,
+    link,
+    noFinish,
+    imageBorder = false,
+  } = props;
   return (
     <Link
       href={link}
@@ -24,7 +33,9 @@ const Teaser = (props: {
         alt={""}
         width="920"
         height="920"
-        className="lg:rounded-xl lg:object-cover"
+        className={`${
+          imageBorder && "border-white border-[4px]"
+        } lg:rounded-xl lg:object-cover`}
         sizes="(max-width: 1023px) 100vw, 50vw"
       ></Image>
       <div className="pl-4 lg:pl-2">
@@ -32,7 +43,10 @@ const Teaser = (props: {
           <h3 className="mt-3 text-2xl flex flex-row gap-4 items-center">
             <b>{headline} </b>
             {noFinish && (
-              <Hourglass className="text-fontNavyBlue" weight="bold" />
+              <>
+                <Hourglass className="text-fontNavyBlue " weight="bold" />
+                <span className="text-sm -ml-3">in progress...</span>
+              </>
             )}
           </h3>
           <p className="mt-3 text-xl font-bold">{content}</p>
