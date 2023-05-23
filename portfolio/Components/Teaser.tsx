@@ -29,7 +29,7 @@ const Teaser = (props: {
       className={`lg:w-[50%] lg:rounded-2xl lg:hover:bg-bgGrey lg:transition-all lg:p-6 group no-underline text-grey h-fit relative`}
       target="_blank"
     >
-      <div className="p-2 bg-white absolute rounded-lg right-8 top-8 opacity-0 transition-all group-hover:opacity-100">
+      <div className="p-2 bg-white absolute rounded-lg right-3 top-3 lg:right-8 lg:top-8 transition-all lg:opacity-0 lg:group-hover:opacity-100 shadow-md">
         <ArrowSquareIn size={25} color="#000" weight="bold" />
       </div>
       <Image
