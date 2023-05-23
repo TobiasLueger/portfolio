@@ -24,7 +24,15 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       img: "/img/eifeljugend.png",
       headline: "Eifeljugend Website",
       content: "Webapp for hike organization",
-      chips: ["React", "TailwindCSS", "Storybook", "Git", "UI/UX", "Vercel"],
+      chips: [
+        "React",
+        "TailwindCSS",
+        "Storybook",
+        "Git",
+        "UI/UX",
+        "Vercel",
+        "Typescript",
+      ],
       noFinish: false,
       imageBorder: false,
     },
@@ -49,9 +57,20 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         "Git",
         "Phosphor Icons",
         "Vercel",
+        "Typescript",
       ],
       noFinish: false,
       imageBorder: true,
+    },
+    {
+      link: "https://pnpmeetup.vercel.app/",
+      img: "/img/pnpmeetup.png",
+      headline: "Pen and Paper Website",
+      content:
+        "A pnp plattform to build maps, create character sheets and play your story with your friends",
+      chips: ["Remix", "UI/UX", "TailwindCSS", "Git", "Vercel", "Typescript"],
+      noFinish: true,
+      imageBorder: false,
     },
   ]);
 }

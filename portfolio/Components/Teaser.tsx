@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import Chip from "./Chip";
-import { Hourglass } from "phosphor-react";
+import { ArrowSquareIn, Hourglass } from "phosphor-react";
 
 const Teaser = (props: {
   img: any;
@@ -26,8 +26,12 @@ const Teaser = (props: {
   return (
     <Link
       href={link}
-      className={`lg:w-[50%] lg:rounded-2xl lg:hover:bg-bgGrey lg:transition-all lg:p-6 group no-underline text-grey h-fit`}
+      className={`lg:w-[50%] lg:rounded-2xl lg:hover:bg-bgGrey lg:transition-all lg:p-6 group no-underline text-grey h-fit relative`}
+      target="_blank"
     >
+      <div className="p-2 bg-white absolute rounded-lg right-8 top-8 opacity-0 transition-all group-hover:opacity-100">
+        <ArrowSquareIn size={25} color="#000" weight="bold" />
+      </div>
       <Image
         src={img}
         alt={""}
