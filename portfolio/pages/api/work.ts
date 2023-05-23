@@ -63,7 +63,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       imageBorder: true,
     },
     {
-      link: "https://pnpmeetup.vercel.app/",
+      link: "https://pnpmeetup.com//",
       img: "/img/pnpmeetup.png",
       headline: "Pen and Paper Website",
       content:
