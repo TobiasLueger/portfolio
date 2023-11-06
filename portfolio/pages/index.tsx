@@ -35,7 +35,7 @@ const Home: NextPage = () => {
       </main>
       <Footer></Footer>
       <Contact></Contact>
-      <Analytics/>
+      <Analytics mode="production"></Analytics>
     </div>
   );
 };

@@ -5,6 +5,7 @@ import Footer from "../../Components/Footer";
 import Me from "../../Components/Me";
 import Navigation from "../../Components/Navigation";
 import Work from "../../Components/Work";
+import { Analytics } from "@vercel/analytics/react";
 
 const Projects: NextPage = () => {
   return (
@@ -29,6 +30,7 @@ const Projects: NextPage = () => {
       </main>
       <Footer></Footer>
       <Contact></Contact>
+      <Analytics mode="production"></Analytics>
     </div>
   );
 };

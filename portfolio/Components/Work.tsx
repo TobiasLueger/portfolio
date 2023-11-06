@@ -30,8 +30,9 @@ const Work = () => {
         headline="My Projects"
         classes="lg:w-full lg:px-6 px-4 lg:mb-4"
       ></HeadText>
-      {data.map((project: any) => (
+      {data.map((project: any, key: number) => (
         <Teaser
+          key={key}
           link={project.link}
           img={project.img}
           headline={project.headline}

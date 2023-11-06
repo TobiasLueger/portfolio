@@ -6,6 +6,7 @@ import Footer from "../Components/Footer";
 import HeadText from "../Components/HeadText";
 import Navigation from "../Components/Navigation";
 import * as Images from "../public/img/imgMap";
+import { Analytics } from "@vercel/analytics/react";
 
 const Life: NextPage = () => {
   const parkList = [
@@ -143,6 +144,7 @@ const Life: NextPage = () => {
       </main>
       <Footer></Footer>
       <Contact></Contact>
+      <Analytics mode="production"></Analytics>
     </div>
   );
 };

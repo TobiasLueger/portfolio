@@ -8,6 +8,7 @@ import Navigation from "../Components/Navigation";
 import Work from "../Components/Work";
 import WorkListTeaser from "../Components/WorkListTeaser";
 import * as ImgMap from "../public/img/imgMap";
+import { Analytics } from "@vercel/analytics/react";
 
 const Resume: NextPage = () => {
   return (
@@ -121,6 +122,7 @@ const Resume: NextPage = () => {
       </main>
       <Footer></Footer>
       <Contact></Contact>
+      <Analytics mode="production"></Analytics>
     </div>
   );
 };

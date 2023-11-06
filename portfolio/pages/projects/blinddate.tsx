@@ -6,6 +6,7 @@ import Me from "../../Components/Me";
 import Navigation from "../../Components/Navigation";
 import Project from "../../Components/Project";
 import Work from "../../Components/Work";
+import { Analytics } from "@vercel/analytics/react";
 
 const Blinddate: NextPage = () => {
   return (
@@ -21,6 +22,7 @@ const Blinddate: NextPage = () => {
       </main>
       <Footer></Footer>
       <Contact></Contact>
+      <Analytics mode="production"></Analytics>
     </div>
   );
 };

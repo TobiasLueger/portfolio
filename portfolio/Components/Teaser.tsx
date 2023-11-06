@@ -57,8 +57,8 @@ const Teaser = (props: {
         </div>
         {chips && (
           <div className="hidden lg:flex lg:flex-row lg:flex-wrap lg:gap-2 lg:mt-4">
-            {chips.map((chip: string) => (
-              <Chip text={chip} classes="font-normal"></Chip>
+            {chips.map((chip: string, key:number) => (
+              <Chip key={key} text={chip} classes="font-normal"></Chip>
             ))}
           </div>
         )}
