@@ -46,7 +46,7 @@ const Resume: NextPage = () => {
         <section>
           <HeadText
             headline="Skills"
-            context="As a Frontend Developer, I possess a diverse skillset that enables me to deliver outstanding results for every project. With expertise in React, React Native, and NextJS, I am proficient in developing scalable and performant web applications that meet client requirements. I also have extensive experience in using Storybook, TailwindCSS, and Cypress for UI design, development, and testing.
+            context="As a Frontend Developer, I possess a diverse skillset that enables me to deliver outstanding results for every project. With expertise in React and NextJS, I am proficient in developing scalable and performant web applications that meet client requirements. I also have extensive experience in using Storybook, TailwindCSS, and Cypress for UI design, development, and testing.
 
             I am proficient in Git and Typescript, which helps me maintain code quality and streamline the development process. My proficiency in Figma and Adobe XD enables me to create engaging designs that align with client vision and project goals.
             
@@ -72,7 +72,7 @@ const Resume: NextPage = () => {
                 companyLink="https://www.djumla.de/"
                 place="Germany, Cologne"
                 jobTitel="Internship Frontend Developer"
-                date="Juli 2021 - now"
+                date="Oktober 2016 - Oktober 2016"
               ></WorkListTeaser>
 
               <WorkListTeaser
@@ -81,7 +81,7 @@ const Resume: NextPage = () => {
                 companyLink="https://www.lemm.de/"
                 place="Germany, Euskirchen"
                 jobTitel="Internship Frontend Developer"
-                date="Juli 2021 - now"
+                date="April 2017 - April 2017"
               ></WorkListTeaser>
             </div>
           </section>

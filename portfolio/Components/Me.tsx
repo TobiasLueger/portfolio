@@ -20,19 +20,19 @@ const Me = ({}) => {
         <h2 className="lg:text-3xl">Stuff that i like and care about</h2>
         <div className="w-full flex flex-row flex-wrap gap-2 mt-4 lg:mt-6">
           <Chip text="React"></Chip>
-          <Chip text="React Native"></Chip>
           <Chip text="NextJS"></Chip>
           <Chip text="Storybook"></Chip>
+          <Chip text="ES6"></Chip>
           <Chip text="TailwindCSS"></Chip>
+          <Chip text="CSS3"></Chip>
+          <Chip text="HTML5"></Chip>
           <Chip text="Cypress"></Chip>
           <Chip text="Git"></Chip>
           <Chip text="Typescript"></Chip>
           <Chip text="Figma"></Chip>
           <Chip text="Jira"></Chip>
           <Chip text="Adobe XD"></Chip>
-          <Chip text="ES6"></Chip>
           <Chip text="Bouldering"></Chip>
-          <Chip text="Gaming"></Chip>
           <Chip text="Family"></Chip>
           <Chip text="Friends"></Chip>
         </div>
