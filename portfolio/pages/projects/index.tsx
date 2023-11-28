@@ -6,6 +6,7 @@ import Me from "../../Components/Me";
 import Navigation from "../../Components/Navigation";
 import Work from "../../Components/Work";
 import { Analytics } from "@vercel/analytics/react";
+import LanguageSwitch from "../../Components/LanguageSwitch";
 
 const Projects: NextPage = () => {
   return (
@@ -29,6 +30,7 @@ const Projects: NextPage = () => {
         <Work></Work>
       </main>
       <Footer></Footer>
+      <LanguageSwitch/>
       <Contact></Contact>
       <Analytics mode="production"></Analytics>
     </div>

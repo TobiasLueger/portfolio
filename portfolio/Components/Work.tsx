@@ -2,46 +2,49 @@ import React, { useEffect, useState } from "react";
 import Teaser from "./Teaser";
 import { useRouter } from "next/router";
 import HeadText from "./HeadText";
+import useLanguageStore from "../lib/globalLanguage";
 
 const Work = () => {
   const router = useRouter();
 
+  const lang = useLanguageStore((state:any) => state.language);
+  
   const [data, setData] = useState([]);
-  const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
     fetch("/api/work")
       .then((res) => res.json())
       .then((res) => {
         setData(res);
         console.log(res);
-        setLoading(false);
       });
   }, []);
 
   return (
     <div
-      className={`flex flex-col lg:flex-row lg:flex-wrap gap-8 lg:gap-0 ${
+      className={`flex flex-col lg:flex-row lg:flex-wrap gap-8 lg:gap-0 lg:pb-44 ${
         router.pathname == "/projects" ? "mt-0" : "mt-20"
       }`}
     >
       <HeadText
-        headline="My Projects"
+        headline={lang === "en" ? "My private Projects" : "Meine privaten Projekte"}
         classes="lg:w-full lg:px-6 px-4 lg:mb-4"
       ></HeadText>
-      {data.map((project: any, key: number) => (
-        <Teaser
-          key={key}
-          link={project.link}
-          img={project.img}
-          headline={project.headline}
-          content={project.content}
-          chips={project.chips}
-          noFinish={project.noFinish}
-          imageBorder={project.imageBorder}
-        ></Teaser>
-      ))}
+      
+        {data.map((project: any, key: number) => (
+          <Teaser
+            key={key}
+            link={project.link}
+            img={project.img}
+            headline={lang === "en" ? project.headline.en : project.headline.de}
+            content={lang === "en" ? project.content.en : project.content.de}
+            chips={project.chips}
+            noFinish={project.noFinish}
+            imageBorder={project.imageBorder}
+            blank={project.blank}
+          ></Teaser>
+        ))}
+    
     </div>
   );
 };
