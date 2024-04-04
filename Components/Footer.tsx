@@ -35,7 +35,7 @@ const Footer = () => {
               weight="regular"
               className="mr-1"
             />
-            2023 Tobias Lüger
+            {(new Date().getFullYear())} Tobias Lüger
           </p>
           <small className="break-normal mb-2 lg:mb-0">
             Find me at
