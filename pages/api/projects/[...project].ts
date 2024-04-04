@@ -10,10 +10,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   const url:any = req.headers.referer;
   const page = url.match(regex)[1];
-  
-
-
-  console.log(page)
 
   if (page === "mediclin") {
     res.status(200).json({

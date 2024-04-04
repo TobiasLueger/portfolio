@@ -24,7 +24,7 @@ const LanguageSwitch = () => {
   }
 
   return (
-    <div
+    <button
       className="flex flex-row justify-center items-center fixed bottom-[100px] right-3 px-2 py-2 bg-greyDark z-50 rounded-full text-white shadow-2xl cursor-pointer no-underline"
       onClick={switchLanguage}
     >
@@ -34,7 +34,7 @@ const LanguageSwitch = () => {
       <div className={language === "de" ? activeItem : normalItem}>
         DE
       </div>
-    </div>
+    </button>
   );
 };
 

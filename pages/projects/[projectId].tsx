@@ -13,7 +13,6 @@ import { useEffect, useState } from "react";
 const ProjectDetail: NextPage = () => {
 
   const router = useRouter();
-  console.log("Router:", router.asPath)
 
   const [data, setData] = useState<any>({});
 
@@ -22,7 +21,6 @@ const ProjectDetail: NextPage = () => {
       .then((res) => res.json())
       .then((res) => {
         setData(res);
-        console.log(res);
       });
   }, []);
 

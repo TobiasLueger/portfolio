@@ -115,23 +115,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       chips: ["Remix", "UI/UX", "TailwindCSS", "Git", "Vercel", "Typescript"],
       noFinish: true,
       imageBorder: false,
-    },
-    // TODO: add brandung Project sites
-    // {
-    //   link: "/projects/mediclin",
-    //   img: "/img/pnpmeetup.png",
-    //   headline: {
-    //     en: "Mediclin",
-    //     de: "Mediclin",
-    //   },
-    //   content: {
-    //     en: "A pnp plattform to build maps, create character sheets and play your story with your friends",
-    //     de: "Eine PNP-Plattform zum Erstellen von Karten und Charakterbögen und um mit deinen Freunden deine Geschichten zu erleben",
-    //   },
-    //   chips: ["Remix", "UI/UX", "TailwindCSS", "Git", "Vercel", "Typescript"],
-    //   noFinish: true,
-    //   imageBorder: false,
-    //   blank: false,
-    // },
+    }
   ]);
 }

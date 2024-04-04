@@ -16,7 +16,6 @@ const Work = () => {
       .then((res) => res.json())
       .then((res) => {
         setData(res);
-        console.log(res);
       });
   }, []);
 
@@ -27,7 +26,7 @@ const Work = () => {
       }`}
     >
       <HeadText
-        headline={lang === "en" ? "My private Projects" : "Meine privaten Projekte"}
+        headline={lang === "en" ? "My Projects" : "Meine Projekte"}
         classes="lg:w-full lg:px-6 px-4 lg:mb-4"
       ></HeadText>
       
