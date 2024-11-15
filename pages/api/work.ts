@@ -115,6 +115,20 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       chips: ["Remix", "UI/UX", "TailwindCSS", "Git", "Vercel", "Typescript"],
       noFinish: true,
       imageBorder: false,
+    },
+    {
+      link: "https://portfolio-rate.vercel.app/",
+      img: "/img/portfolio-rate.png",
+      headline: {
+        en: "Portfolio Rating Site",
+        de: "Portfolio Bewertungsseite",
+      },
+      content: {
+        en: "A showcase and rating of top portfolio websites",
+        de: "Eine Überblick und Bewertungsseite für die besten Portfolio Webseiten",
+      },
+      chips: ["Next.js", "UI/UX", "TailwindCSS", "Git", "Vercel", "Typescript", "shadcn"],
+      imageBorder: false,
     }
   ]);
 }

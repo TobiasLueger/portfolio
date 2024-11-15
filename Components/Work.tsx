@@ -7,8 +7,8 @@ import useLanguageStore from "../lib/globalLanguage";
 const Work = () => {
   const router = useRouter();
 
-  const lang = useLanguageStore((state:any) => state.language);
-  
+  const lang = useLanguageStore((state: any) => state.language);
+
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -18,6 +18,11 @@ const Work = () => {
         setData(res);
       });
   }, []);
+
+  // Sort projects: finished projects first, then in-progress projects
+  const sortedData = [...data].sort((a: any, b: any) => {
+    return a.noFinish === b.noFinish ? 0 : a.noFinish ? 1 : -1;
+  });
 
   return (
     <div
@@ -29,21 +34,20 @@ const Work = () => {
         headline={lang === "en" ? "My Projects" : "Meine Projekte"}
         classes="lg:w-full lg:px-6 px-4 lg:mb-4"
       ></HeadText>
-      
-        {data.map((project: any, key: number) => (
-          <Teaser
-            key={key}
-            link={project.link}
-            img={project.img}
-            headline={lang === "en" ? project.headline.en : project.headline.de}
-            content={lang === "en" ? project.content.en : project.content.de}
-            chips={project.chips}
-            noFinish={project.noFinish}
-            imageBorder={project.imageBorder}
-            blank={project.blank}
-          ></Teaser>
-        ))}
-    
+
+      {sortedData.map((project: any, key: number) => (
+        <Teaser
+          key={key}
+          link={project.link}
+          img={project.img}
+          headline={lang === "en" ? project.headline.en : project.headline.de}
+          content={lang === "en" ? project.content.en : project.content.de}
+          chips={project.chips}
+          noFinish={project.noFinish}
+          imageBorder={project.imageBorder}
+          blank={project.blank}
+        ></Teaser>
+      ))}
     </div>
   );
 };
